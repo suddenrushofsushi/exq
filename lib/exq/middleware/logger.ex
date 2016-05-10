@@ -28,7 +28,7 @@ defmodule Exq.Middleware.Logger do
   end
 
   defp log_context(%Pipeline{assigns: assigns}) do
-    "#{assigns.host}[#{assigns.job.jid}]"
+    "#{assigns.host}[#{assigns.job_json}]"
   end
   
   defp formatted_diff(diff) when diff > 1000, do: [diff |> div(1000) |> Integer.to_string, "ms"]
